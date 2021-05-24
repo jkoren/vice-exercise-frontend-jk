@@ -1,6 +1,7 @@
 import { Typography } from '@material-ui/core'
 import React, { useState, useEffect} from 'react'
 import Show from "./Show"
+import Grid from '@material-ui/core/Grid';
 
 export const Main = (props) => {
 
@@ -46,11 +47,12 @@ const showtiles =
       <Typography>
         Vice shows
       </Typography>
-        <Grid>
+        <Grid container spacing={3}>
           {showtiles}
         </Grid>
     </div>
   )
 }
+
 
 export default Main
