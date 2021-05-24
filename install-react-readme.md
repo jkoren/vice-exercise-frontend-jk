@@ -108,7 +108,7 @@ body {
 14. Not critical but convenient - Finally, change the script in package.json, from script     
 `"create": "webpack"`
 to
-`"start": "webpack-dev-server --open"`
+`"start": "webpack-dev-server --open",`
 and this will 1) build the project 2) save to local cache and 3) open the app in a browser every time we run `npm run start` 
 
 # to store remote to github

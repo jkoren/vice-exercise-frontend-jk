@@ -16,6 +16,7 @@
   "license": "MIT",
   "scripts": {
     "start-api": "json-server --watch shows.json",
+    "start": "webpack-dev-server --open",
     "create": "webpack"
   },
   "dependencies": {
