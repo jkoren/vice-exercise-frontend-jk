@@ -138,6 +138,12 @@ result: added 1 package from 1 contributor and audited 877 packages in 10.678s
 1. npm run create
 2. open \dist\index.html with Live Server
 ```
+
+# to start the server
+```
+nvm use 12.14.1
+yarn start-api 
+```
 # To install on another machine:
 ```
 1. clone the repo
