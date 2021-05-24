@@ -115,6 +115,24 @@ and this will 1) build the project 2) save to local cache and 3) open the app in
 1. create a repo: vice-exercise-frontend-jk
 2. git remote set-url origin https://github.com/jkoren/vice-exercise-frontend-jk.git
 
+# adding material ui
+1. `npm install @material-ui/core`
+
+result: added 37 packages from 49 contributors and audited 876 packages in 17.671s
+
+2. `npm install @fontsource/roboto` 
+
+result: added 1 package from 1 contributor and audited 877 packages in 10.678s
+(this may not be necessary.)
+
+3. add in <body> of index.html
+```
+  <!-- Fonts to support Material Design -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <!-- Icons to support Material Design -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  ```
+
 # To run the app
 ```
 1. npm run create
