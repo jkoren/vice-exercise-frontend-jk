@@ -2,17 +2,47 @@
   "name": "exercise-frontend",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/VICEMedia/exercise-frontend",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VICEMedia/exercise-frontend.git"
+  },
   "author": "VICE Engineering <engineering@vice.com>",
   "license": "MIT",
   "scripts": {
-    "start-api": "json-server --watch shows.json"
+    "start-api": "json-server --watch shows.json",
+    "create": "webpack"
   },
   "dependencies": {
-    "json-server": "0.16.1"
+    "json-server": "0.16.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "engines": {
     "node": "12.14.1",
     "npm": "6.13.6"
-  }
+  },
+  "description": "Below is a HTML/CSS/JS exercise that involves building out a web component, or single page app, to navigate through various VICE shows.",
+  "bugs": {
+    "url": "https://github.com/VICEMedia/exercise-frontend/issues"
+  },
+  "homepage": "https://github.com/VICEMedia/exercise-frontend#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.5",
+    "html-webpack-plugin": "^5.3.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "keywords": []
 }
