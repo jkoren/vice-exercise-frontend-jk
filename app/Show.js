@@ -26,14 +26,21 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Show(props) {
+  const show = props.show
+  const id = show.id
+  const title = show.title
+  const episodes = show.episodes
+  const product_image_url = show.product_image_url
   const selectedShow = props.selectedShow
+  const numShows = props.numShows
+
   const handlePreviousClick = () => {
     if (selectedShow > 0)
       props.setSelectedShow(selectedShow - 1)
   }
   
   const handleNextClick = () => {
-    if (selectedShow < props.numShows - 1)
+    if (selectedShow < numShows - 1)
       props.setSelectedShow(selectedShow + 1)
   }
 
@@ -45,23 +52,26 @@ export default function Show(props) {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image={props.product_image_url}
-            title={props.title}
+            image={product_image_url}
+            title={title}
             />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
+            {/* <Typography gutterBottom variant="h5" component="h2">
               {props.title}
+            </Typography> */}
+            <Typography  align="center">
+              {title}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              Episodes: {props.episodes}
+            <Typography variant="body2" color="textSecondary" component="p" align="center">
+              Episodes: {episodes}
             </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary" onClick={handlePreviousClick}>
+          <Button size="small" color="primary" onClick={handlePreviousClick} align="left">
             Previous
           </Button>
-          <Button size="small" color="primary" onClick={handleNextClick}>
+          <Button size="small" color="primary" onClick={handleNextClick} align="right">
             Next
           </Button>
         </CardActions>

@@ -9,6 +9,11 @@ class App extends React.Component {
       <div>
         <Main />
       </div>
+    //   <Router>
+    //     <Switch>
+    //       <Route exact path="/" component={Main} /> 
+    //     </Switch>
+    // </Router>
     )
   }
 }

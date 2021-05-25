@@ -105,11 +105,13 @@ body {
 
 13. `npm run create` which creates the 2 files in the /dist folder, including index_bundle.js
 
-14. Not critical but convenient - Finally, change the script in package.json, from script     
+14. Finally, change the script in package.json, from script     
 `"create": "webpack"`
 to
-`"start": "webpack-dev-server --open",`
+`"start": "webpack serve --open",`
 and this will 1) build the project 2) save to local cache and 3) open the app in a browser every time we run `npm run start` 
+
+note: in the video this was `"start": "webpack-dev-server --open",` but this has changed. 
 
 # to store remote to github
 1. create a repo: vice-exercise-frontend-jk
