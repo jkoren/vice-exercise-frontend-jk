@@ -32,32 +32,16 @@ useEffect(() => {
   fetchShows()
 }, [])
 
-// const showtiles =  
-// shows.map(show => {
-//   return (
-//     <Show 
-//     id={show.id}
-//     episodes={show.episodes}
-//     product_image_url={show.product_image_url}
-//     />
-//     )
-//   })
-  
-  const showsFetched = (shows.length > 0)
-  // console.log("shows.length")
-  // console.log(shows.length)
-  // console.log("showsFetched")
-  // console.log(showsFetched)
-  const showtile = 
-    !showsFetched ? "" :
-    <Show
-      id={shows[selectedShow].id}
-      episodes={shows[selectedShow].episodes}
-      product_image_url={shows[selectedShow].product_image_url}
-      selectedShow={selectedShow}
-      setSelectedShow={setSelectedShow}
-      numShows={shows.length}
-    />
+const showsFetched = (shows.length > 0)
+const show = shows[selectedShow]
+const showtile = 
+  !showsFetched ? "" :
+  <Show
+    show={show}
+    selectedShow={selectedShow}
+    setSelectedShow={setSelectedShow}
+    numShows={shows.length}
+  />
 
   return (
     <div>
@@ -65,10 +49,9 @@ useEffect(() => {
         <AppBar />
       </header>
 
-        <Grid container spacing={3}>
-          {/* {showtiles} */}
+        {/* <Grid container spacing={3}> */}
           {showtile}
-        </Grid>
+        {/* </Grid> */}
 
       <footer>
         <FooterBar />
