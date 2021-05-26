@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 300
   },
   media: {
-    height: 400
+    height: 200
   },
   paper: {
     padding: theme.spacing(2),
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Show(props) {
+export default function ShowSide(props) {
   const show = props.show
   const id = show.id
   const title = show.title
@@ -63,14 +63,14 @@ export default function Show(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      {/* <CardActions>
           <Button size="small" color="primary" onClick={handlePreviousClick} align="left">
             Previous
           </Button>
           <Button size="small" color="primary" onClick={handleNextClick} align="right">
             Next
           </Button>
-        </CardActions>
+        </CardActions> */}
     </Card>
   )
 }

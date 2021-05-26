@@ -113,6 +113,8 @@ and this will 1) build the project 2) save to local cache and 3) open the app in
 
 note: in the video this was `"start": "webpack-dev-server --open",` but this has changed. 
 
+15. install react-router-dom for routes: `npm install --save react-router-dom`
+
 # to store remote to github
 1. create a repo: vice-exercise-frontend-jk
 2. git remote set-url origin https://github.com/jkoren/vice-exercise-frontend-jk.git
@@ -135,17 +137,23 @@ result: added 1 package from 1 contributor and audited 877 packages in 10.678s
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   ```
 
-# To run the app
+# to run the app
+to start front end server (react):
 ```
-1. npm run create
-2. open \dist\index.html with Live Server
+npm run start
 ```
 
-# to start the server
+to start back end server (node):
 ```
 nvm use 12.14.1
 yarn start-api 
 ```
+
+to run locally:
+```
+http://localhost:8080/
+```
+
 # To install on another machine:
 ```
 1. clone the repo

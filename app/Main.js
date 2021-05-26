@@ -3,12 +3,17 @@ import React, { useState, useEffect} from 'react'
 import AppBar from "./AppBar"
 import FooterBar from "./FooterBar"
 import Show from "./Show"
+import SideShow from "./SideShow"
 import Grid from '@material-ui/core/Grid';
 
 export const Main = (props) => {
 
 const [shows, setShows] = useState([])
 const [selectedShow, setSelectedShow] = useState(0)
+
+const specifiedShow = (props.match.params.id != undefined ? props.match.params.id : "nope")
+console.log("specifiedShow")
+console.log(specifiedShow)
 
 const fetchShows = () => {
   const apiURL = 'http://localhost:3000/shows';
@@ -34,6 +39,12 @@ useEffect(() => {
 
 const showsFetched = (shows.length > 0)
 const show = shows[selectedShow]
+
+const leftShowIndex = (selectedShow == 0 ? null : selectedShow - 1)
+const rightShowIndex = (selectedShow == shows.length ? null : selectedShow + 1)
+const leftShow = leftShowIndex != null ? shows[leftShowIndex] : null 
+const rightShow = rightShowIndex != null ? shows[rightShowIndex] : null
+
 const showtile = 
   !showsFetched ? "" :
   <Show
@@ -43,16 +54,33 @@ const showtile =
     numShows={shows.length}
   />
 
+const rightShowtile = 
+  !showsFetched || !rightShow ? "" :
+  <SideShow
+    show={rightShow}
+    selectedShow={rightShowIndex}
+    numShows={shows.length}
+  />
+
+const leftShowtile = 
+  !showsFetched || !leftShow ? "" :
+  <SideShow
+    show={leftShow}
+    selectedShow={leftShowIndex}
+    numShows={shows.length}
+  />
+
   return (
     <div>
       <header>
         <AppBar />
       </header>
+      <Grid>
+        {leftShowtile}
+        {showtile}
+        {rightShowtile}
 
-        {/* <Grid container spacing={3}> */}
-          {showtile}
-        {/* </Grid> */}
-
+      </Grid>
       <footer>
         <FooterBar />
       </footer>
