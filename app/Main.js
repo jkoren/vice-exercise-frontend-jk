@@ -11,9 +11,6 @@ export const Main = (props) => {
 const [shows, setShows] = useState([])
 const [selectedShow, setSelectedShow] = useState(0)
 
-const specifiedShow = (props.match.params.id != undefined ? props.match.params.id : "nope")
-console.log("specifiedShow")
-console.log(specifiedShow)
 
 const fetchShows = () => {
   const apiURL = 'http://localhost:3000/shows';
@@ -76,17 +73,19 @@ const leftShowtile =
         <AppBar />
       </header>
 
-      <Grid container spacing={3}>
+      {/* <Grid container spacing={3}>
         <Grid item xs={4}>
-          {/* {leftShowtile} */}
+          {leftShowtile}
         </Grid>
         <Grid item xs={4}>
           {showtile}
         </Grid>
         <Grid item xs={4}>
-          {/* {rightShowtile} */}
+          {rightShowtile}
         </Grid>
-      </Grid>
+      </Grid> */}
+
+      {showtile}
 
       <footer>
         <FooterBar />
