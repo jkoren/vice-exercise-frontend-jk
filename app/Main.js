@@ -11,7 +11,6 @@ export const Main = (props) => {
 const [shows, setShows] = useState([])
 const [selectedShow, setSelectedShow] = useState(0)
 
-
 const fetchShows = () => {
   const apiURL = 'http://localhost:3000/shows';
   fetch(apiURL, {credentials: "same-origin"})
