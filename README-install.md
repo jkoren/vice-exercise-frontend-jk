@@ -111,9 +111,12 @@ to
 `"start": "webpack serve --open",`
 and this will 1) build the project 2) save to local cache and 3) open the app in a browser every time we run `npm run start` 
 
-note: in the video this was `"start": "webpack-dev-server --open",` but this has changed. 
-
 15. install react-router-dom for routes: `npm install --save react-router-dom`
+
+16. install an older version of node for compability
+```
+nvm install 12.14.1
+```
 
 # to store remote to github
 1. create a repo: vice-exercise-frontend-jk
@@ -153,6 +156,11 @@ to run locally:
 ```
 http://localhost:8080/
 ```
+# to deploy to heroku
+
+https://codeburst.io/deploy-your-webpack-apps-to-heroku-in-3-simple-steps-4ae072af93a8
+
+1.  git push heroku master
 
 # To install on another machine:
 ```
