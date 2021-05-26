@@ -75,18 +75,24 @@ const leftShowtile =
       <header>
         <AppBar />
       </header>
-      <Grid>
-        {leftShowtile}
-        {showtile}
-        {rightShowtile}
 
+      <Grid container spacing={3}>
+        <Grid item xs={4}>
+          {/* {leftShowtile} */}
+        </Grid>
+        <Grid item xs={4}>
+          {showtile}
+        </Grid>
+        <Grid item xs={4}>
+          {/* {rightShowtile} */}
+        </Grid>
       </Grid>
+
       <footer>
         <FooterBar />
       </footer>
     </div>
   )
 }
-
 
 export default Main
