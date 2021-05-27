@@ -3,8 +3,10 @@ var ReactDOM = require('react-dom');
 require('./application.css');
 import Main from './Main.js'
 
-class App extends React.Component {
+const [shows, setShows] = useState([])
 
+class App extends React.Component {
+  
   componentDidMount(){
     const parsedUrl = new URL(window.location.href)
     const showId = parsedUrl.searchParams.get("id")
