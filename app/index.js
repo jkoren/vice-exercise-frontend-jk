@@ -3,14 +3,12 @@ var ReactDOM = require('react-dom');
 require('./application.css');
 import Main from './Main.js'
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Main />
-      </div>
-    )
-  }
+function App() {
+  return (
+    <div className="App">
+      <Main />
+    </div>
+  )
 }
 
 ReactDOM.render(
