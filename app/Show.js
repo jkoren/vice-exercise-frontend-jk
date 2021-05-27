@@ -2,20 +2,20 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Grid from '@material-ui/core/Grid';
+import Box from "@material-ui/core/Box";
+// import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    maxWidth: 300
+    maxWidth: 400
   },
   media: {
-    height: 400
+    height: 550
   },
   paper: {
     padding: theme.spacing(2),
@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Show(props) {
   const show = props.show
-  const id = show.id
   const title = show.title
   const episodes = show.episodes
   const product_image_url = show.product_image_url
@@ -63,14 +62,17 @@ export default function Show(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-          <Button size="small" color="primary" onClick={handlePreviousClick} align="left">
-            Previous
-          </Button>
-          <Button size="small" color="primary" onClick={handleNextClick} align="right">
-            Next
-          </Button>
-        </CardActions>
+
+      <Box p={2} display="flex" justifyContent="center">
+        <Button size="small" color="primary" onClick={handlePreviousClick} align="left">
+          Previous
+          {/* <ArrowBackIosIcon/> */}
+        </Button>
+        <Button size="small" color="primary" onClick={handleNextClick} align="right">
+          Next
+        </Button>
+      </Box>
+
     </Card>
   )
 }
