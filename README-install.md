@@ -139,7 +139,15 @@ result: added 1 package from 1 contributor and audited 877 packages in 10.678s
   <!-- Icons to support Material Design -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   ```
+# add jest for testing
+1. npm install --save-dev jest
+2. npm i --save-dev @testing-library/react react-test-renderer
+3. add to package.json under scripts `"test": "jest"`
 
+# to run tests
+```
+npm run test
+```
 # to run the app
 to start front end server (react):
 ```
@@ -171,5 +179,9 @@ https://codeburst.io/deploy-your-webpack-apps-to-heroku-in-3-simple-steps-4ae072
 TylerMcGinnis.com
 React (without Create React App) with Babel 7, Webpack 4, and React 16
 https://www.youtube.com/watch?v=Zb2mQyQRwqc
+
+Kris Foster
+React Testing Tutorial (Jest + React Testing Library)
+https://www.youtube.com/watch?v=ML5egqL3YFE
 
 How to Format Code in Markdown https://www.freecodecamp.org/news/how-to-format-code-in-markdown/

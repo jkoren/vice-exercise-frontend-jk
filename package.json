@@ -17,7 +17,9 @@
   "scripts": {
     "start-api": "json-server --watch shows.json",
     "start": "webpack serve --open",
-    "create": "webpack"
+    "create": "webpack",
+    "test": "jest",
+    "testEnvironment": "jsdom"
   },
   "dependencies": {
     "@fontsource/roboto": "^4.3.0",
@@ -40,9 +42,15 @@
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
+    "@testing-library/react": "^11.2.7",
     "babel-loader": "^8.2.2",
+    "chai": "^4.3.4",
     "css-loader": "^5.2.5",
     "html-webpack-plugin": "^5.3.1",
+    "jest": "^27.0.1",
+    "mocha": "^8.4.0",
+    "nyc": "^15.1.0",
+    "react-test-renderer": "^17.0.2",
     "style-loader": "^2.0.0",
     "webpack": "^5.37.1",
     "webpack-cli": "^4.7.0",
