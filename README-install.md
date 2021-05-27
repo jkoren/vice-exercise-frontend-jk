@@ -124,6 +124,8 @@ nvm install 12.14.1
 
 # adding material ui
 1. `npm install @material-ui/core`
+2. `npm install material-icons`
+3. `npm install @material-ui/icons`
 
 result: added 37 packages from 49 contributors and audited 876 packages in 17.671s
 
@@ -132,12 +134,14 @@ result: added 37 packages from 49 contributors and audited 876 packages in 17.67
 result: added 1 package from 1 contributor and audited 877 packages in 10.678s
 (this may not be necessary.)
 
-3. add in <body> of index.html
+3. add in <head> of index.html
 ```
   <!-- Fonts to support Material Design -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
   <!-- Icons to support Material Design -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <!-- to make Material Design responsive -->
+   <meta name="viewport" content="width=device-width" />
   ```
 # add jest for testing
 1. npm install --save-dev jest
