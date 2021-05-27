@@ -29,6 +29,26 @@ ReactDOM.render(
   document.getElementById('app')
 )
 ```
+later, I changed to this, to do as a function component, rather than a class component
+```
+var React = require('react');
+var ReactDOM = require('react-dom');
+require('./application.css');
+import Main from './Main.js'
+
+function App() {
+  return (
+    <div className="App">
+      <Main />
+    </div>
+  )
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+)
+```
 6. npm install --save-dev @babel/core @babel/preset-env @babel/preset-react webpack webpack-cli webpack-dev-server babel-loader css-loader style-loader html-webpack-plugin
   
 results: 
