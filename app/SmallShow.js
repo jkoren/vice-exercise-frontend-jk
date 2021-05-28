@@ -6,9 +6,13 @@ export default function SmallShow(props) {
   const product_image_url = show.product_image_url
   const border = props.selected ? 5 : 1
 
+  const handleClick = () => {
+    props.setSelectedShow(props.index)
+  }
+
   return (
     <Grid item>
-      <img src={product_image_url} height="80" border={border} />
+      <img src={product_image_url} height="80" border={border} onClick={handleClick}/>
     </Grid>
   )
 }
