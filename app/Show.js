@@ -64,7 +64,7 @@ export default function Show(props) {
         </CardContent>
       </CardActionArea>
 
-      <Box  display="flex" justifyContent="center">
+      <Box display="flex" justifyContent="center">
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>

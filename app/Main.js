@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import Hidden from "@material-ui/core/Hidden";
 import SmallShow from './SmallShow';
 
-export const Main = (props) => {
+export const Main = () => {
   const [shows, setShows] = useState([])
   const [selectedShow, setSelectedShow] = useState(0)
 
@@ -45,8 +45,12 @@ export const Main = (props) => {
       numShows={shows.length}
     />
   
-  const startShow = showsFetched ? Math.max(0, selectedShow - 2) : null
-  const endShow = showsFetched ? Math.min(selectedShow + 2, shows.length - 1) : null
+  // show 5 shows
+  const numShows = showsFetched ? shows.length : 0
+  const lowEnd = [0,1].includes(selectedShow)
+  const highEnd = [numShows - 2, numShows - 1].includes(selectedShow)
+  const startShow = lowEnd ? 0 : (highEnd ? numShows - 5 : selectedShow - 2)
+  const endShow = lowEnd ? 4 : (highEnd ? numShows - 1 : selectedShow + 2)
 
   const showTiles = !showsFetched ? "" :
     shows.map((show, index) =>
@@ -54,7 +58,9 @@ export const Main = (props) => {
       <SmallShow 
         key={show.id} 
         show={show} 
+        index={index}
         selected={index==selectedShow}
+        setSelectedShow={setSelectedShow}
       />
       :
       ""
