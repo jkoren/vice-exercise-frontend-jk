@@ -14,10 +14,10 @@ import ShareIcon from '@material-ui/icons/Share';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    maxWidth: 300
+    maxWidth: 250
   },
   media: {
-    height: 415
+    height: 350
   },
   paper: {
     padding: theme.spacing(2),
@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary
   }
 }));
-
 
 export default function Show(props) {
   const show = props.show
@@ -65,7 +64,7 @@ export default function Show(props) {
         </CardContent>
       </CardActionArea>
 
-      <Box p={2} display="flex" justifyContent="center">
+      <Box  display="flex" justifyContent="center">
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>

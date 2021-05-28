@@ -3,6 +3,8 @@ import AppBar from "./AppBar"
 import FooterBar from "./FooterBar"
 import Show from "./Show"
 import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
+import SmallShow from './SmallShow';
 
 export const Main = (props) => {
   const [shows, setShows] = useState([])
@@ -33,7 +35,7 @@ export const Main = (props) => {
 
   const showsFetched = (shows.length > 0)
   const show = shows[selectedShow]
-
+  
   const showtile = !showsFetched ? "" :
     <Show
       show={show}
@@ -41,14 +43,33 @@ export const Main = (props) => {
       setSelectedShow={setSelectedShow}
       numShows={shows.length}
     />
+  
+  const startShow = showsFetched ? Math.max(0, selectedShow - 2) : null
+  const endShow = showsFetched ? Math.min(selectedShow + 2, shows.length - 1) : null
+
+  const showTiles = !showsFetched ? "" :
+    shows.map((show, index) =>
+      (index >= startShow && index <= endShow) ?
+      <SmallShow 
+        key={show.id} 
+        show={show} 
+        selected={index==selectedShow}
+      />
+      :
+      ""
+    )
 
   return (
     <div>
       <header>
         <AppBar />
       </header>
-
       <Box p={2} display="flex" justifyContent="center">
+        <Grid container spacing={1} justify="center">
+          {showTiles}
+        </Grid>
+      </Box>
+      <Box display="flex" justifyContent="center">
         {showtile}
       </Box>
 
