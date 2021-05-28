@@ -4,6 +4,7 @@ import FooterBar from "./FooterBar"
 import Show from "./Show"
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
+import Hidden from "@material-ui/core/Hidden";
 import SmallShow from './SmallShow';
 
 export const Main = (props) => {
@@ -64,14 +65,26 @@ export const Main = (props) => {
       <header>
         <AppBar />
       </header>
-      <Box p={2} display="flex" justifyContent="center">
-        <Grid container spacing={1} justify="center">
-          {showTiles}
-        </Grid>
-      </Box>
-      <Box display="flex" justifyContent="center">
+
+      <Hidden smDown>
+        <Box p={2} display="flex" justifyContent="center">
+          <Grid container spacing={1} justify="center" >
+            {showTiles}
+          </Grid>
+        </Box>
+      </Hidden>
+
+      <Box p={1} display="flex" justifyContent="center">
         {showtile}
       </Box>
+
+      <Hidden mdUp>
+        <Box p={2} display="flex" justifyContent="center">
+          <Grid container spacing={1} justify="center" >
+            {showTiles}
+          </Grid>
+        </Box>
+      </Hidden>
 
       <footer>
         <FooterBar />
