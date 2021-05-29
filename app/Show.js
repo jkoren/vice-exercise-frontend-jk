@@ -31,18 +31,6 @@ export default function Show(props) {
   const title = show.title
   const episodes = show.episodes
   const product_image_url = show.product_image_url
-  const selectedShow = props.selectedShow
-  const numShows = props.numShows
-
-  const handlePreviousClick = () => {
-    if (selectedShow > 0)
-      props.setSelectedShow(selectedShow - 1)
-  }
-  
-  const handleNextClick = () => {
-    if (selectedShow < numShows - 1)
-      props.setSelectedShow(selectedShow + 1)
-  }
 
   const classes = useStyles()
 
@@ -71,10 +59,12 @@ export default function Show(props) {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
-        <Button size="small" color="primary" onClick={handlePreviousClick} align="left">
+
+        <Button href={props.prevShowUrl} size="small" color="primary" align="left">
           Previous
         </Button>
-        <Button size="small" color="primary" onClick={handleNextClick} align="right">
+
+        <Button href={props.nextShowUrl} size="small" color="primary" align="right">
           Next
         </Button>
       </Box>

@@ -11,8 +11,9 @@ export const Main = (props) => {
   const [shows, setShows] = useState([])
   const [selectedShow, setSelectedShow] = useState(0)
 
+  const apiURL = "http://localhost:3000/shows"
+
   const fetchShows = () => {
-    const apiURL = `http://localhost:3000/shows`;
     fetch(apiURL, 
       {credentials: "same-origin"
     }) .then(function(response){
@@ -26,8 +27,8 @@ export const Main = (props) => {
     })
     .then((shows)=> {
       setShows(shows)
-      const urlShowId = shows.map(object => object.id).indexOf(props.showId)
-      setSelectedShow(urlShowId)
+      const urlShowIndex = shows.map(object => object.id).indexOf(props.showId) // update show from URL query sring if included
+      setSelectedShow(urlShowIndex == -1 ? 0 : urlShowIndex)
     })
     .catch((error) => console.error(`Error in Main.js fetch (GET):fetchShows ${error.message}`))
   }
@@ -39,12 +40,21 @@ export const Main = (props) => {
   const showsFetched = (shows.length > 0)
   const show = shows[selectedShow]
 
+  const prevShowIndex = selectedShow == 0 ? 0 : selectedShow - 1
+  const lastShowIndex = shows.length - 1
+  const nextShowIndex = selectedShow == lastShowIndex ? lastShowIndex : selectedShow + 1
+
+  const myUrl = document.location.href.split('?')[0]  // if there is a query string in the URL, remove it
+  const prevShowUrl = showsFetched ? myUrl + "?id=" + shows[prevShowIndex].id : ""
+  const nextShowUrl = showsFetched ? myUrl + "?id=" + shows[nextShowIndex].id : ""
+
   const showtile = !showsFetched ? "" :
     <Show
       show={show}
-      selectedShow={selectedShow}
       setSelectedShow={setSelectedShow}
       numShows={shows.length}
+      prevShowUrl={prevShowUrl}
+      nextShowUrl={nextShowUrl}
     />
   
   // show 5 shows
