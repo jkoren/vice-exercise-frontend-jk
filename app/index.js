@@ -1,7 +1,8 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-require('./application.css');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './application.css'
 import Main from './Main.js'
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {

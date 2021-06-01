@@ -29,11 +29,11 @@ ReactDOM.render(
   document.getElementById('app')
 )
 ```
-later, I changed to this, to do as a function component, rather than a class component
+later, I changed `index.js` to be a function component instead of a class component based on index created by `create-react-app` - as follows:
 ```
-var React = require('react');
-var ReactDOM = require('react-dom');
-require('./application.css');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './application.css'
 import Main from './Main.js'
 
 function App() {
@@ -165,13 +165,36 @@ result: added 1 package from 1 contributor and audited 877 packages in 10.678s
   ```
 # add jest for testing
 1. npm install --save-dev jest
-2. npm i --save-dev @testing-library/react react-test-renderer
-3. add to package.json under scripts `"test": "jest"`
+2. npm i --save-dev @testing-library/react react-test-renderer`
+3. add to package.json under scripts `"test": "jest react-scripts test --env=jsdom","`
 
 # to run tests
 ```
 npm run test
 ```
+
+# install a linter
+1. npm install -g eslint
+2. eslint --init  (creates config file: `eslintrc.json`)
+answer these questions
+```
+✔ How would you like to use ESLint? · problems
+✔ What type of modules does your project use? · esm
+✔ Which framework does your project use? · react
+✔ Does your project use TypeScript? · No / Yes
+✔ Where does your code run? · browser
+✔ What format do you want your config file to be in? · JSON
+```
+3. npm install -g eslint-plugin-react
+4. add this to eslintrc.json to automatically detect react version and avoid linter error
+```
+"settings": {
+    "react" : {
+        "version" : "detect"
+    }
+}
+```
+
 # to run the app
 to start front end server (react):
 ```
@@ -188,6 +211,11 @@ to run locally:
 ```
 http://localhost:8080/
 ```
+# to run eslint
+```
+eslint eslint ./app/*.js
+```
+
 # to deploy to heroku
 
 https://codeburst.io/deploy-your-webpack-apps-to-heroku-in-3-simple-steps-4ae072af93a8
@@ -209,3 +237,7 @@ React Testing Tutorial (Jest + React Testing Library)
 https://www.youtube.com/watch?v=ML5egqL3YFE
 
 How to Format Code in Markdown https://www.freecodecamp.org/news/how-to-format-code-in-markdown/
+
+techsith:
+React unit testing with Jest & React-testing-library
+https://www.youtube.com/watch?v=3e1GHCA3GP0

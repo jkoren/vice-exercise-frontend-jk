@@ -10,6 +10,7 @@ import Box from "@material-ui/core/Box";
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,6 +32,8 @@ export default function Show(props) {
   const title = show.title
   const episodes = show.episodes
   const product_image_url = show.product_image_url
+  
+  const summary = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 
   const classes = useStyles()
 
@@ -40,7 +43,7 @@ export default function Show(props) {
         <CardMedia
           className={classes.media}
           image={product_image_url}
-          title={title}
+          title={summary}
           />
         <CardContent>
           <Typography  align="center">
@@ -61,14 +64,19 @@ export default function Show(props) {
         </IconButton>
 
         <Button href={props.prevShowUrl} size="small" color="primary" align="left">
-          Previous
+          Back
         </Button>
 
         <Button href={props.nextShowUrl} size="small" color="primary" align="right">
-          Next
+          Forward
         </Button>
       </Box>
 
     </Card>
   )
+}
+Show.propTypes = {
+  show: PropTypes.object.isRequired,
+  prevShowUrl: PropTypes.string.isRequired,
+  nextShowUrl: PropTypes.string.isRequired,
 }
