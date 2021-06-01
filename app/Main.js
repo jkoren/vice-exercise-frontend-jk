@@ -2,10 +2,11 @@ import React, { useState, useEffect} from 'react'
 import AppBar from "./AppBar"
 import FooterBar from "./FooterBar"
 import Show from "./Show"
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
-import Hidden from "@material-ui/core/Hidden";
-import SmallShow from './SmallShow';
+import Box from "@material-ui/core/Box"
+import Grid from "@material-ui/core/Grid"
+import Hidden from "@material-ui/core/Hidden"
+import SmallShow from './SmallShow'
+import PropTypes from 'prop-types'
 
 export const Main = (props) => {
   const [shows, setShows] = useState([])
@@ -71,7 +72,7 @@ export const Main = (props) => {
         key={show.id} 
         show={show} 
         index={index}
-        selected={index==selectedShow}
+        selected={index == selectedShow}
         setSelectedShow={setSelectedShow}
       />
       :
@@ -109,6 +110,9 @@ export const Main = (props) => {
       </footer>
     </div>
   )
+}
+Main.propTypes = {
+  showId: PropTypes.string.isRequired
 }
 
 export default Main
