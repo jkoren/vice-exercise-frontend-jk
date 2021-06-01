@@ -193,8 +193,12 @@ answer these questions
     }
 }
 ```
-
-# to run the app
+# To install:
+```
+1. clone the repo
+2. run npm install
+```
+# To start the servers
 to start front-end server (react):
 ```
 npm run start
@@ -206,7 +210,7 @@ nvm use 12.14.1
 yarn start-api 
 ```
 
-to run locally:
+# To run locally:
 ```
 http://localhost:8080/
 ```
@@ -214,25 +218,13 @@ http://localhost:8080/
 ```
 eslint eslint ./app/*.js
 ```
-
-# To install on another machine:
-```
-1. clone the repo
-2. run npm install
-```
 references:
 
 TylerMcGinnis.com
 React (without Create React App) with Babel 7, Webpack 4, and React 16
 https://www.youtube.com/watch?v=Zb2mQyQRwqc
 
-Kris Foster:
-React Testing Tutorial (Jest + React Testing Library)
-https://www.youtube.com/watch?v=ML5egqL3YFE
-
 techsith:
 React unit testing with Jest & React-testing-library
 https://www.youtube.com/watch?v=3e1GHCA3GP0
 
-How to Format Code in Markdown 
-https://www.freecodecamp.org/news/how-to-format-code-in-markdown/
