@@ -1,4 +1,6 @@
 # React Installation in Exercise-Frontend Directory
+This is a log of how this repo was created.
+
 1.  npm init -y
 2.  npm install react react-dom
 3.  edit .gitignore - files not to upload to git, but will be created with npm install - add:
@@ -51,17 +53,8 @@ ReactDOM.render(
 ```
 6. npm install --save-dev @babel/core @babel/preset-env @babel/preset-react webpack webpack-cli webpack-dev-server babel-loader css-loader style-loader html-webpack-plugin
   
-results: 
-```
-updated 10 packages and audited 839 packages in 31.875s
-
-16 packages are looking for funding
-  run `npm fund` for details
-
-found 0 vulnerabilities
-  ```
 7. touch webpack.config.js
-8. webpack.config.js tells webpack how to combine all the modules together (where the entry point is) and where to put the combined file. webpack.config.js says to run the babel-loader on javascript files, and the style-loader and css-loader on .css files. initially set up for building in development, later change to production.  webpack.config.js is:
+8. webpack.config.js tells webpack how to combine all the modules together (where the entry point is) and where to put the combined file. webpack.config.js says to run the babel-loader on javascript files, and the style-loader and css-loader on .css files.  webpack.config.js is:
 
 ```
 var path = require('path')
@@ -119,7 +112,7 @@ module.exports = {
 12. update application.css to be:
 ```
 body {
-  background: green;
+  background: lightblue;
 }
 ```
 
@@ -146,15 +139,8 @@ nvm install 12.14.1
 1. `npm install @material-ui/core`
 2. `npm install material-icons`
 3. `npm install @material-ui/icons`
-
-result: added 37 packages from 49 contributors and audited 876 packages in 17.671s
-
-2. `npm install @fontsource/roboto` 
-
-result: added 1 package from 1 contributor and audited 877 packages in 10.678s
-(this may not be necessary.)
-
-3. add in <head> of index.html
+4. `npm install @fontsource/roboto` 
+5. add in <head> of index.html
 ```
   <!-- Fonts to support Material Design -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
@@ -163,6 +149,19 @@ result: added 1 package from 1 contributor and audited 877 packages in 10.678s
   <!-- to make Material Design responsive -->
    <meta name="viewport" content="width=device-width" />
   ```
+6. change md breakpoint from 960px to 980px
+add to index.js
+```
+  import { themeProvider, createMuiTheme } from "@material-ui/core/styles"
+
+  const theme = createMuiTheme({
+    breakpoints: {
+      values: {
+        md: 980,
+      },
+    },
+  })
+```
 # add jest for testing
 1. npm install --save-dev jest
 2. npm i --save-dev @testing-library/react react-test-renderer`
@@ -196,12 +195,12 @@ answer these questions
 ```
 
 # to run the app
-to start front end server (react):
+to start front-end server (react):
 ```
 npm run start
 ```
 
-to start back end server (node):
+to start back-end server (node):
 ```
 nvm use 12.14.1
 yarn start-api 
@@ -216,28 +215,24 @@ http://localhost:8080/
 eslint eslint ./app/*.js
 ```
 
-# to deploy to heroku
-
-https://codeburst.io/deploy-your-webpack-apps-to-heroku-in-3-simple-steps-4ae072af93a8
-
-1.  git push heroku master
-
 # To install on another machine:
 ```
 1. clone the repo
 2. run npm install
 ```
+references:
 
 TylerMcGinnis.com
 React (without Create React App) with Babel 7, Webpack 4, and React 16
 https://www.youtube.com/watch?v=Zb2mQyQRwqc
 
-Kris Foster
+Kris Foster:
 React Testing Tutorial (Jest + React Testing Library)
 https://www.youtube.com/watch?v=ML5egqL3YFE
-
-How to Format Code in Markdown https://www.freecodecamp.org/news/how-to-format-code-in-markdown/
 
 techsith:
 React unit testing with Jest & React-testing-library
 https://www.youtube.com/watch?v=3e1GHCA3GP0
+
+How to Format Code in Markdown 
+https://www.freecodecamp.org/news/how-to-format-code-in-markdown/

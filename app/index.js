@@ -13,9 +13,9 @@ function App() {
     <Router>
       <Switch>
         <Route path="/">
-          <Main 
-            showId={showId}
-          />
+            <Main 
+              showId={showId}
+            />
         </Route> 
       </Switch>
     </Router>
