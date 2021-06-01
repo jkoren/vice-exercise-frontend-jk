@@ -85,7 +85,7 @@ export const Main = (props) => {
         <AppBar />
       </header>
 
-      <Hidden smDown>
+      <Hidden only={['xs', 'sm']}>
         <Box p={2} display="flex" justifyContent="center">
           <Grid container spacing={1} justify="center" >
             {showTiles}
@@ -97,7 +97,7 @@ export const Main = (props) => {
         {showtile}
       </Box>
 
-      <Hidden mdUp>
+      <Hidden only={['md', 'lg', 'xl']}>
         <Box p={2} display="flex" justifyContent="center">
           <Grid container spacing={1} justify="center" >
             {showTiles}

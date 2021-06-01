@@ -13,9 +13,6 @@ export default function SmallShow(props) {
       <a href={showUrl}>
         <img src={productImageUrl} height="80" border={border}/>
       </a>
-      <div data-testid="jesttest">
-        hi
-      </div>
     </Grid>
   )
 }
