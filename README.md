@@ -41,3 +41,5 @@ yarn start-api
 ```
 http://localhost:8080/
 ```
+# Screen shot of completed project as mobile website
+# ![vice-app-mobile-screenshot](images/vice-project-screenshot.png)
