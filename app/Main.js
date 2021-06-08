@@ -12,12 +12,13 @@ export const Main = (props) => {
   const [shows, setShows] = useState([])
   const [selectedShow, setSelectedShow] = useState(0)
 
-  const apiURL = process.env.NODE_ENV == "development" ? 
-    "http://localhost:3000/shows" : "https://vice-exercise.herokuapp.com/shows"
+  // const apiURL = process.env.NODE_ENV == "development" ? 
+  //   "http://localhost:3000/shows" : "/shows"
+  const apiURL = "/shows"
   console.log(apiURL)
   
   const fetchShows = () => {
-    fetch(apiURL, 
+    fetch('/shows', 
       {credentials: "same-origin"
     }) .then(function(response){
       if (response.ok) {
