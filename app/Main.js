@@ -12,8 +12,10 @@ export const Main = (props) => {
   const [shows, setShows] = useState([])
   const [selectedShow, setSelectedShow] = useState(0)
 
-  const apiURL = "http://localhost:3000/shows"
-
+  const apiURL = process.env.NODE_ENV == "development" ? 
+    "http://localhost:3000/shows" : "https://vice-exercise.herokuapp.com/shows"
+  console.log(apiURL)
+  
   const fetchShows = () => {
     fetch(apiURL, 
       {credentials: "same-origin"
@@ -112,7 +114,7 @@ export const Main = (props) => {
   )
 }
 Main.propTypes = {
-  showId: PropTypes.string.isRequired
+  showId: PropTypes.string
 }
 
 export default Main
