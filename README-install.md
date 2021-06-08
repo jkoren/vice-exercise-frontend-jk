@@ -201,6 +201,7 @@ answer these questions
 # To start the servers
 to start front-end server (react):
 ```
+export NODE_ENV=development
 npm run start
 ```
 
@@ -218,6 +219,11 @@ http://localhost:8080/
 ```
 eslint eslint ./app/*.js
 ```
+# to run on heroku
+```
+heroku config:set NODE_ENV=production
+```
+
 references:
 
 TylerMcGinnis.com
