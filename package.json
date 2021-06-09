@@ -19,7 +19,8 @@
     "start": "webpack serve --open",
     "create": "webpack",
     "test": "jest react-scripts test --env=jsdom",
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "heroku-prebuild": "npm install --dev"
   },
   "dependencies": {
     "@fontsource/roboto": "^4.3.0",
