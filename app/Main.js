@@ -17,7 +17,7 @@ export const Main = (props) => {
   console.log(apiURL)
   
   const fetchShows = () => {
-    fetch('https://vice-exercise.herokuapp.com:3000/shows', 
+    fetch(apiURL, 
       {credentials: "same-origin"
     }) .then(function(response){
       if (response.ok) {
