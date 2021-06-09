@@ -201,7 +201,6 @@ answer these questions
 # To start the servers
 to start front-end server (react):
 ```
-export NODE_ENV=development
 npm run start
 ```
 
