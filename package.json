@@ -20,7 +20,9 @@
     "create": "webpack",
     "test": "jest react-scripts test --env=jsdom",
     "testEnvironment": "jsdom",
-    "heroku-prebuild": "npm install --dev"
+    "heroku-prebuild": "npm install --dev",
+    "build": "webpack --mode production",
+    "heroku-postbuild": "webpack --mode production"
   },
   "dependencies": {
     "@fontsource/roboto": "^4.3.0",
