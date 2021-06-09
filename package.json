@@ -44,7 +44,8 @@
     "eslint-plugin-react": "^7.24.0",
     "jest": "^27.0.1",
     "react-test-renderer": "^17.0.2",
-    "style-loader": "^2.0.0"
+    "style-loader": "^2.0.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "engines": {
     "node": "12.14.1",
