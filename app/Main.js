@@ -15,22 +15,22 @@ export const Main = (props) => {
   console.log("window.location.href")
   console.log(window.location.href)
 
-  // const apiURL = process.env.NODE_ENV == "development" ? 
   const apiURL = window.location.href == "http://localhost:8080/" ? 
     "http://localhost:3000/shows" : "https://vice-exercise.herokuapp.com/shows"
-  // console.log('process', process)
-  // console.log('node_env', process.env.NODE_ENV)
   console.log('apiUrl', apiURL)
+
   const fetchShows = () => {
     fetch(apiURL, 
       {credentials: "same-origin"
     }) .then(function(response){
+      console.log("response")
       console.log(response)
       if (response.ok) {
         return response.json();
       } else {
         let errorMessage = `${response.status} (${response.statusText})`,
         error = new Error(errorMessage);
+        console.log("error")
         console.log(error)
         throw (error);
       }
