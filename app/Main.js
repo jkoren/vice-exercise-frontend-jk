@@ -13,7 +13,7 @@ export const Main = (props) => {
   const [selectedShow, setSelectedShow] = useState(0)
 
   const apiURL = process.env.NODE_ENV == "development" ? 
-    "http://localhost:3000/shows" : "https://vice-exercise.herokuapp.com/shows"
+    "http://localhost:3000/shows" : "http://vice-exercise.herokuapp.com/shows"
   // console.log('process', process)
   // console.log('node_env', process.env.NODE_ENV)
   console.log('apiUrl', apiURL)
