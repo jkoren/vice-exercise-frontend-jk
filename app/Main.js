@@ -17,8 +17,7 @@ export const Main = (props) => {
 
   const apiURL = window.location.href.startsWith("http://localhost:8080/") ? 
     "http://localhost:3000/shows" : "https://vice-exercise.herokuapp.com/shows"
-
-  // const apiURL = "https://vice-exercise.herokuapp.com/shows"
+  // https://www.w3schools.com/js/js_window_location.asp
 
   console.log('apiUrl', apiURL)
 
@@ -45,6 +44,8 @@ export const Main = (props) => {
       console.log('shows')
       console.log(shows)
       setShows(shows)
+      console.log("props.showId")
+      console.log(props.showId)
       const urlShowIndex = shows.map(object => object.id).indexOf(props.showId) // update show from URL query string if included
       console.log("urlShowIndex")
       console.log(urlShowIndex)
