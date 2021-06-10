@@ -45,7 +45,9 @@ export const Main = (props) => {
     .then((theShows)=> {
       console.log('theShows')
       console.log(theShows)
-      const shows = isLocal ? theShows : theShows[shows]
+      // eslint-disable-next-line no-debugger
+      debugger
+      const shows = isLocal ? theShows : theShows["shows"]
       console.log("shows")
       console.log(shows)
       setShows(shows)
