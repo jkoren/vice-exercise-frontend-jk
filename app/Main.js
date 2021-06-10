@@ -15,14 +15,20 @@ export const Main = (props) => {
   console.log("window.location.href")
   console.log(window.location.href)
 
-  const apiURL = window.location.href == "http://localhost:8080/" ? 
+  const apiURL = window.location.href.startsWith("http://localhost:8080/") ? 
     "http://localhost:3000/shows" : "https://vice-exercise.herokuapp.com/shows"
+
+  // const apiURL = "https://vice-exercise.herokuapp.com/shows"
+
   console.log('apiUrl', apiURL)
 
   const fetchShows = () => {
-    fetch(apiURL, 
-      {credentials: "same-origin"
-    }) .then(function(response){
+    fetch(apiURL
+    //   , 
+    // {
+    //     credentials: "same-origin"
+    // }
+    ) .then(function(response){
       console.log("response")
       console.log(response)
       if (response.ok) {
@@ -36,9 +42,12 @@ export const Main = (props) => {
       }
     })
     .then((shows)=> {
-      console.log('shows', shows)
+      console.log('shows')
+      console.log(shows)
       setShows(shows)
-      const urlShowIndex = shows.map(object => object.id).indexOf(props.showId) // update show from URL query sring if included
+      const urlShowIndex = shows.map(object => object.id).indexOf(props.showId) // update show from URL query string if included
+      console.log("urlShowIndex")
+      console.log(urlShowIndex)
       setSelectedShow(urlShowIndex == -1 ? 0 : urlShowIndex)
     })
     .catch((error) => console.error(`Error in Main.js fetch (GET):fetchShows ${error.message}`))
