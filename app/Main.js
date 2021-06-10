@@ -46,7 +46,9 @@ export const Main = (props) => {
       setShows(shows)
       console.log("props.showId")
       console.log(props.showId)
+      console.log("before urlShowIndex")
       const urlShowIndex = shows.map(object => object.id).indexOf(props.showId) // update show from URL query string if included
+      console.log("after urlShowIndex")
       console.log("urlShowIndex")
       console.log(urlShowIndex)
       setSelectedShow(urlShowIndex == -1 ? 0 : urlShowIndex)
