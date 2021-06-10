@@ -30,7 +30,7 @@ In index.html, rebuild the mocks in the designs folder in semantic HTML, CSS and
 # To start the servers
 to start front-end server (react):
 ```
-export NODE_ENV=development
+npm run build
 npm run start
 ```
 to start back-end server (node):
