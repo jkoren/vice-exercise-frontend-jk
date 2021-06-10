@@ -12,7 +12,11 @@ export const Main = (props) => {
   const [shows, setShows] = useState([])
   const [selectedShow, setSelectedShow] = useState(0)
 
-  const apiURL = process.env.NODE_ENV == "development" ? 
+  console.log("window.location.href")
+  console.log(window.location.href)
+
+  // const apiURL = process.env.NODE_ENV == "development" ? 
+  const apiURL = window.location.href == "http://localhost:8080/" ? 
     "http://localhost:3000/shows" : "https://vice-exercise.herokuapp.com/shows"
   // console.log('process', process)
   // console.log('node_env', process.env.NODE_ENV)
