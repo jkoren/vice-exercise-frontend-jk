@@ -14,20 +14,25 @@ export const Main = (props) => {
 
   const apiURL = process.env.NODE_ENV == "development" ? 
     "http://localhost:3000/shows" : "https://vice-exercise.herokuapp.com/shows"
-  
+  console.log('process', process)
+  console.log('node_env', process.env.NODE_ENV)
+  console.log('apiUrl', apiURL)
   const fetchShows = () => {
     fetch(apiURL, 
       {credentials: "same-origin"
     }) .then(function(response){
+      console.log(response)
       if (response.ok) {
         return response.json();
       } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
+        let errorMessage = `${response.status} (${response.statusText})`
+        console.log('errorMessage', errorMessage)
         error = new Error(errorMessage);
         throw (error);
       }
     })
     .then((shows)=> {
+      console.log('shows', shows)
       setShows(shows)
       const urlShowIndex = shows.map(object => object.id).indexOf(props.showId) // update show from URL query sring if included
       setSelectedShow(urlShowIndex == -1 ? 0 : urlShowIndex)
