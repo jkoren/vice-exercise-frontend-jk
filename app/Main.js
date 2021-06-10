@@ -15,9 +15,11 @@ export const Main = (props) => {
   console.log("window.location.href")
   console.log(window.location.href)
 
-  const apiURL = window.location.href.startsWith("http://localhost:8080/") ? 
-    "http://localhost:3000/shows" : "https://vice-exercise.herokuapp.com/shows"
+  const isLocal = window.location.href.startsWith("http://localhost:8080/")
   // https://www.w3schools.com/js/js_window_location.asp
+
+  const apiURL = isLocal ? 
+    "http://localhost:3000/shows" : "https://vice-exercise.herokuapp.com/shows"
 
   console.log('apiUrl', apiURL)
 
@@ -40,13 +42,17 @@ export const Main = (props) => {
         throw (error);
       }
     })
-    .then((shows)=> {
-      console.log('shows')
+    .then((theShows)=> {
+      console.log('theShows')
+      console.log(theShows)
+      const shows = isLocal ? theShows : theShows[shows]
+      console.log("shows")
       console.log(shows)
       setShows(shows)
-      console.log("props.showId")
-      console.log(props.showId)
+      // console.log("props.showId")
+      // console.log(props.showId)
       console.log("before urlShowIndex")
+
       const urlShowIndex = shows.map(object => object.id).indexOf(props.showId) // update show from URL query string if included
       console.log("after urlShowIndex")
       console.log("urlShowIndex")
