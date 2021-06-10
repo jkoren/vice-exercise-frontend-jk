@@ -12,53 +12,28 @@ export const Main = (props) => {
   const [shows, setShows] = useState([])
   const [selectedShow, setSelectedShow] = useState(0)
 
-  console.log("window.location.href")
-  console.log(window.location.href)
-
   const isLocal = window.location.href.startsWith("http://localhost:8080/")
   // https://www.w3schools.com/js/js_window_location.asp
 
   const apiURL = isLocal ? 
     "http://localhost:3000/shows" : "https://vice-exercise.herokuapp.com/shows"
 
-  console.log('apiUrl', apiURL)
-
   const fetchShows = () => {
-    fetch(apiURL
-    //   , 
-    // {
-    //     credentials: "same-origin"
-    // }
-    ) .then(function(response){
-      console.log("response")
-      console.log(response)
+    fetch(apiURL) 
+    .then(function(response){
       if (response.ok) {
         return response.json();
       } else {
         let errorMessage = `${response.status} (${response.statusText})`,
         error = new Error(errorMessage);
-        console.log("error")
-        console.log(error)
         throw (error);
       }
     })
     .then((theShows)=> {
-      console.log('theShows')
-      console.log(theShows)
-      // eslint-disable-next-line no-debugger
-      debugger
       const shows = isLocal ? theShows : theShows["shows"]
-      console.log("shows")
-      console.log(shows)
       setShows(shows)
-      // console.log("props.showId")
-      // console.log(props.showId)
-      console.log("before urlShowIndex")
 
       const urlShowIndex = shows.map(object => object.id).indexOf(props.showId) // update show from URL query string if included
-      console.log("after urlShowIndex")
-      console.log("urlShowIndex")
-      console.log(urlShowIndex)
       setSelectedShow(urlShowIndex == -1 ? 0 : urlShowIndex)
     })
     .catch((error) => console.error(`Error in Main.js fetch (GET):fetchShows ${error.message}`))
