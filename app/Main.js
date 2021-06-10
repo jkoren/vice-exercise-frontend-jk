@@ -25,9 +25,9 @@ export const Main = (props) => {
       if (response.ok) {
         return response.json();
       } else {
-        let errorMessage = `${response.status} (${response.statusText})`
-        console.log('errorMessage', errorMessage)
+        let errorMessage = `${response.status} (${response.statusText})`,
         error = new Error(errorMessage);
+        console.log(error)
         throw (error);
       }
     })
